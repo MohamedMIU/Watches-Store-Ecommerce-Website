@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/orders.css">
+    <title>Orders Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>Orders Management System</h1>
+    </header>
+    <div class="sidebar">
+        <a href="/admin/users"><i class="fa-solid fa-user"></i></a>
+        <a href="/admin/products"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="#"><i class="fa-solid fa-truck-ramp-box"></i></a>
+    </div>
+    <div class="orders-container">
+        <% Orders.forEach(order => { %>
+            <div class="order-row">
+                <div class="order-info">
+                    <p><strong>Order ID:</strong> <%= order._id %></p>
+                    <p><strong>Total Price:</strong> $<%= order.totalPrice %></p>
+                </div>
+                <div class="order-actions">
+                    <button class="delete-order" data-order-id="<%= order._id %>">
+                        <i class="fa-solid fa-ban"></i> Cancel
+                    </button>
+                </div>
+                <div class="order-items">
+                    <% order.items.forEach(item => { %>
+                        <div class="order-item">
+                            <p><strong>Product ID:</strong> <%= item.productId %></p>
+                            <p><strong>Product Name:</strong> <%= item.productName %></p>
+                            <p><strong>Price:</strong> $<%= item.productPrice %></p>
+                            <p><strong>Quantity:</strong> <%= item.quantity %></p>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+    <script src="/js/order.js"></script>
+</body>
+</html>

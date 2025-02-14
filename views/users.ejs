@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/users.css">
+    <title>Users Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>User Management System</h1>
+        <button class="add-user-btn" onclick="location.href='/admin/users/new'">Add User</button>
+    </header>
+    <div class="sidebar">
+        <a href="#"><i class="fa-solid fa-user"></i></a>
+        <a href="/admin/products"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="/admin/orders"><i class="fa-solid fa-truck-ramp-box"></i></a>
+    </div>
+    <div class="users-container">
+        <% if (users && users.length > 0) { %>
+            <% users.forEach(user => { %>
+                <div class="user-row" data-user-id="<%= user._id %>">
+                    <div class="user-info">
+                        <p><strong>Name:</strong> <%= user.username %></p>
+                        <p><strong>Email:</strong> <%= user.email %></p>
+                        <p><strong>Phone:</strong> <%= user.phoneno %></p>
+                        <p><strong>Address:</strong> <%= user.street %>, <%= user.city %>, <%= user.state %>, <%= user.zip %>, <%= user.country %></p>
+                        <p><strong>Is Admin:</strong> <%= user.isAdmin %></p>
+                        <p><strong>Is Verified:</strong> <%= user.isVerified %></p>
+                    </div>
+                    <div class="user-actions">
+                        <i class="fas fa-trash-alt" onclick="deleteUser('<%= user._id %>')"></i>
+                        <i class="fas fa-edit" onclick="editUser('<%= user._id %>')"></i>
+                    </div>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>No users found.</p>
+        <% } %>
+    </div>
+    <script>
+        async function deleteUser(userId) {
+            try {
+                const response = await fetch(`/admin/users/${userId}`, {
+                    method: 'DELETE',
+                });
+                if (response.ok) {
+                    location.reload();
+                } else {
+                    alert('Error deleting user');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        function editUser(userId) {
+            location.href = `/admin/users/edit/${userId}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link href="Men Section.ejs" >
+</head>
+<style>
+  
+</style>
+<body>
+    <section class="filter">
+        <h1>ALL ITEMS:</h1>
+        <form class="shadyyy" method="get" id="filter-form">
+            <select name="orderby" class="orderby" aria-label="Shop order" id="orderby">
+                <option value="popularity" selected="selected">Sort by popularity</option>
+                <option value="price">Sort by price: low to high</option>
+                <option value="price-desc">Sort by price: high to low</option>
+            </select>
+            <input type="hidden" name="paged" value="1">
+        </form>
+    </section>
+
+    
+
+    <script>
+        document.getElementById('orderby').addEventListener('change', function() {
+            document.getElementById('filter-form').submit();
+        });
+    </script>
+</body>
+</html>

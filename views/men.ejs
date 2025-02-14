@@ -1,0 +1,240 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/CSS/Men.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2.2.2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="/CSS/details.css">
+    <link rel="stylesheet" href="/CSS/footer.css">
+    <link href="c:\Users\Shady\Downloads\Web Project MAG\Web Project\assets\css\header2.css" rel="stylesheet">
+    <link href="/CSS/header2.css" rel="stylesheet">
+
+
+
+    <title>GT Men</title>
+</head>
+<body>
+  
+    <%- include('./partials/header.ejs') %>
+
+    <section class="main">
+        
+        <h2 id="ss123">Time changes,<br>
+            <span>we don't.</span></h2>
+            <div class="texty">
+                <p>Time's Triumph, Your Inspiration.</p>
+            </div>
+            <video class="hover-video" autoplay muted>
+                
+                <source src="/Videos/VIV.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               
+              </video>
+            
+            
+    </section>
+   
+    <section class="section-slider">
+        <h1 id="ghjkl">shop the look</h1>
+    <div class="containerAAAA">
+        <div class="slider-wrapper">
+          <button id="prev-slide" class="slide-button material-symbols-rounded">
+            chevron_left
+          </button>
+          <ul class="image-list">
+              
+              <li class="image-item">
+                  <img src="/IMAGES/picture-elegant-young-fashion-man.jpg" alt="Image 1">
+                 
+                </li>
+                <li class="image-item">
+                  <img src="/IMAGES/brutal-angry-man-white-shirt-is-wearing-protection-his-fist-before-fight-dark-studio.jpg" alt="Image 2">
+                 
+                </li>
+                <li class="image-item">
+                  <img src="/IMAGES/millionaire-man-resting-relaxing-while-sitting-sofa-luxury-room-handsome-man-smoking-cigar-iqos.jpg" alt="Image 3">
+                 
+                </li>
+                <li class="image-item">
+                  <img src="/IMAGES/njn.jpg" alt="Image 3">
+                 
+                </li>
+                <!-- Add more image items here -->
+              </ul>
+          <button id="next-slide" class="slide-button material-symbols-rounded">
+            chevron_right
+          </button>
+        </div>
+        <div class="slider-scrollbar">
+          <div class="scrollbar-track">
+            <div class="scrollbar-thumb"></div>
+          </div>
+        </div>
+      </div>
+      </section>
+    
+
+
+      <section class="filter">
+        <div class="search-barr">
+            <form action="/Men/search" method="GET"> <!-- Add a form for search -->
+                <input type="text" name="query" placeholder="Search.." value="<%= query %>">
+                <button type="submit"> <i class="fas fa-search"></i></button>
+               
+            </form>
+        </div>
+        <h1>ALL ITEMS:</h1>
+        <form class="shadyyy" method="get" id="filter-form">
+            <select name="orderby" class="orderby" aria-label="Shop order" id="orderby">
+                <option value="popularity" selected="selected">Sort by popularity</option>
+                <option value="price">Sort by price: low to high</option>
+                <option value="price-desc">Sort by price: high to low</option>
+            </select>
+            <input type="hidden" name="paged" value="1">
+        </form>
+    </section>
+    <section class="products">
+        <% if(Products.length > 0) { %>
+            <% Products.forEach(Product => { %>
+                <% if (Product.category === 'male') { %>
+                    <div class="product-card" id="pp1">
+                        <div class="product-image">
+                            <img src="<%= Product.imageUrl %>" alt="Product Image"> <!-- Use the imageUrl from the product -->
+                            <div class="heart-icon">
+                             
+                                <input type="checkbox" class="heart-checkbox" id="heart-checkbox-<%= Product._id %>">
+                                <label for="heart-checkbox-<%= Product._id %>" class="heart">
+                                    <i class="fa-solid fa-heart"></i>
+                                </label>
+                                
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">
+                                <%= Product.name %>
+                            </div>
+                            <div class="product-price">
+                                <div class="product-lastprice">
+                                    <%= Product.price %>$
+                                </div>
+                                <div class="product-discount-price">
+                                    <% if (Product.oldPrice) { %>
+                                        <%= Product.oldPrice %>$
+                                    <% } %>
+                                </div>
+                                <div class="product-discount">
+                                    <% if (Product.discount) { %>
+                                        (<%= Product.discount %>%)
+                                    <% } %>
+                                </div>
+                            </div>
+                            <div class="cardddyyy">
+                                <form action="/add-to-cart" method="POST">
+                                <input type="hidden" name="productId" value="<%= Product.id %>">
+                                <input type="hidden" name="productName" value="<%= Product.name %>">
+                                <input type="hidden" name="productPrice" value="<%= Product.price %>">
+                                <button class="cart-button">
+                                <span class="add-to-cart">Add to cart</span>
+                                <span class="added">Added</span>
+                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fas fa-box"></i>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% }) %>
+        <% } %>
+    </section>
+    
+
+</div>
+<section class="shady">
+    <div class="carousel" data-flickity='{ "autoPlay": true }'>
+
+        <div class="carousel-cell">
+            <div class="img-rolex">
+                <div class="img-row">
+                   <div class="imgg">
+        <img src="/IMAGES/hp-collections-portugieser-iw503702-new.jpg.transform.global_image_480.avif" alt="ashtrk fe baka"> 
+        <div class="texttty">
+            <h2>PORTUGIESER</h2>
+        </div>  
+    </div>
+    </div>
+</div>
+</div>
+<div class="carousel-cell">
+<div class="img-rolex">
+    <div class="img-row">
+       <div class="imgg">
+        <img src="/IMAGES/hp-collections-pilots-watch-iw389105-new.jpg.transform.global_image_480.avif" alt="">
+        <div class="texttty">
+            <h2>PILOT'S</h2>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="carousel-cell">
+    <div class="img-rolex">
+        <div class="img-row">
+           <div class="imgg">
+        <img src="/IMAGES/hp-collections-portofino-iw344602-new.jpg.transform.global_image_480.avif" alt="">
+        <div class="texttty">
+            <h2>PORTOFINO</h2>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+    <div class="carousel-cell">
+        <div class="img-rolex">
+            <div class="img-row">
+               <div class="imgg">
+        <img src="/IMAGES/hp-collections-ingenieur-iw328901-new6.jpg.transform.global_image_480.webp" alt="">
+        
+        <div class="texttty">
+            <h2>INGENIEUR</h2>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+   
+    <div class="carousel-cell">
+        <div class="img-rolex">
+            <div class="img-row">
+               <div class="imgg">
+            <img src="/IMAGES/Aquatimer-collection-1.jpg.transform.global_image_480.avif" alt="">
+            <div class="texttty">
+                <h2>AQUATIMER</h2>
+            </div>
+           </div>
+    </div>
+    </div>
+</div>
+</div>
+
+
+</section>
+
+
+<script src="/js/add-to-cart.js"></script>
+<script src="/js/slider-wrapper.js"></script>
+<script src="/js/header2.js"></script>
+<script src="/js/footer.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js">
+	</script>
+      <%- include('./partials/footer.ejs') %>
+      <script>
+        
+        document.getElementById('orderby').addEventListener('change', function() {
+            document.getElementById('filter-form').submit();
+        });
+    </script>
+</body>
+</html>

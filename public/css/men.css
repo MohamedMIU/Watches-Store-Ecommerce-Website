@@ -1,0 +1,750 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+section{ 
+    padding: 0px 50px;
+}
+
+header{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+ 
+ }
+
+.logo{
+    color: rgb(237, 201, 103); 
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 1.8em;
+    text-transform: uppercase;
+}
+.navigation a{
+    color: rgb(237, 201, 103); 
+    font-size: 1.1em;
+    font-weight: 700;
+    text-decoration: none;
+    padding-left: 20px;
+}
+.navigation a:hover{
+    color:brown;
+}
+.shady{
+    padding: 0px 0px;
+
+}
+.products{
+    background-color:#1e1e1e;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#ss123{
+
+    color: #e0bb7a;
+    
+}
+.main{
+   
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: 10%;
+    display: flex;
+    align-items:center;
+    background-image: url("../IMAGES/handsome-bearded-man-wearing-suit-sitting-leather-sofa-holding-smartphone-comfort-relaxation.jpg");
+    background-size: 100%;
+    background-position:  right right;
+    
+}
+
+.hover-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .main:hover .hover-video {
+    opacity: 1;
+  }
+
+.main h2 {
+    position:absolute;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    font-weight: 600px;
+    padding-left: 0px;
+    margin-top: 22%;
+    min-width: 600;
+    text-transform: uppercase;
+}
+.main .texty{
+    font-size: 1em;
+    margin-top: 505px;
+    margin-left: 19px;
+    position: relative;
+    color: #e0bb7a ;
+}
+
+
+.img-rolex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 40px;
+    
+}
+
+.img-row img {
+    width: 13.5rem;
+    height: 13.5rem;
+    border-radius: 50%;
+    margin: 20px;
+    margin-top: 35px;
+    justify-content: space-between;
+}
+.product-card {
+    display:relative;
+    flex-direction: column;
+    margin: 50px;
+    width: 18rem;
+    height: 27rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+    justify-content: space-evenly;
+    margin: 25px 0px;
+}
+
+.product-card:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
+}
+
+.product-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease-in-out;
+}
+
+
+
+.product-info {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+.product-discount-price{
+   padding-left: 8px;
+    display: inline;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(128,128,128); 
+    text-decoration: line-through;}
+
+.product-lastprice {
+    display: inline;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f2c752;; 
+}
+
+.product-discount {
+    display: inline;
+    padding-left: 10px;
+    font-size: 0.9em;
+    color: #f2c752; 
+}
+.product-name {
+    font-size: 1.2em;
+    /* margin-bottom: 8px; */
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+.texttty{
+    color: #e0bb7a;;
+    display: flex;
+    justify-content: center;
+}
+
+.img-row{
+    display: flex;
+}
+
+.carousel {
+	margin-top: 8%;
+    padding: 0px 0px;
+}
+.carousel-cell {
+    width: 15%;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+  }
+
+.carousel-cell:before {
+	display: block;
+	content: '';
+}
+.flickity-prev-next-button {
+    display: none;
+  }
+  
+.flickity-page-dots {
+    display: none;
+  }
+
+  .ads img {
+    width: 36.5rem;
+    height: 26.1rem;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    
+}
+
+
+.trending-now{
+    padding: 50px;
+   
+    justify-content: center;
+}
+.trending-now h1
+{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 25px;
+}
+.trending-now .products
+{
+    padding: 0px 0px;
+}
+
+
+#pp1:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("../IMAGES/stylish-businessman-looking-watch_23-2147985445.jpg");
+
+}
+#pp2:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/omega-constellation-co-axial-master-chronometer-41-mm-13130412199002-portrait-1-b88943.avif");
+
+}
+#pp3:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/rehearsal-preparation-groom-s-watch-hand.jpg");
+
+}
+#pp4:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31062425099001-portrait-1-716e20.avif");
+
+}
+#pp5:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("");
+
+}
+#pp6:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("");
+
+}
+#pp7:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/UGM_prGMX0ulFjrkHZol8Q.png.transform.global_image_540.avif");
+
+}
+#pp8:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("../IMAGES/portrait-handsome-fashion-stylish-hipster-businessman-model-dressed-elegant-black-suit.jpg");
+
+}
+#pp9:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21032422001001-portrait-1-eff208.avif");
+
+}
+#pp10:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("young-chain.jpg");
+
+}
+#pp11:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("close-fashion-portrait-young-woman-black-bodysuit-with-gold-cuts-chain-ring-posing.jpg");
+
+}
+#pp12:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("lovely-woman.jpg");
+
+}
+
+#pp13:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("young-model-demonstrating-golden-necklace.jpg");
+
+}
+#pp14:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("cool-woman-posing-with-sunglasses-side-view.jpg");
+
+}
+
+.heart-icon {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.heart-checkbox {
+  display: none;
+}
+
+.heart {
+    margin-top: 5px;
+  position: absolute;
+  top: 0;
+  left: 250px;
+  font-size: 20px; /* Adjust the size as needed */
+  color: black; /* Default color of the heart icon */
+}
+
+.heart-checkbox:checked + .heart {
+  color: red; /* Color of the heart icon when checked */
+}
+
+/* Apply styles to the form */
+.shadyyy {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the select dropdown */
+.shadyyy select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: rgb(237, 201, 103);
+    font-size: 14px;
+}
+
+/* Style the hidden input */
+.shadyyy input[type="hidden"] {
+    display: none;
+}
+
+.filter{
+    color: #e0bb7a;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+div[id="pp5"] .product-info {
+    padding: 28px;
+}
+div[id="pp6"] .product-info {
+    padding: 28px;
+}
+
+
+
+.cart-button {
+    margin-top: 15px;
+	position: relative;
+	width: 16rem;
+	height: 3rem;
+	border: 0;
+    font-size: 0.9rem;
+	border-radius: 8px;
+	background-color: #f2c752;
+	outline: none;
+	cursor: pointer;
+	color: #fff;
+	transition: .3s ease-in-out;
+	overflow: hidden;
+}
+.cart-button:hover {
+    background-color: #1e1e1e;
+}
+.cart-button:active {
+	transform: scale(.9);
+}
+
+.cart-button .fa-shopping-cart {
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	left: -10%;
+	font-size: 1.5em;
+	transform: translate(-50%,-50%);
+}
+.cart-button .fa-box {
+	position: absolute;
+	z-index: 3;
+	top: -20%;
+	left: 52%;
+	font-size: 0.75rem;
+	transform: translate(-50%,-50%);
+}
+.cart-button span {
+	position: absolute;
+	z-index: 1;
+	left: 50%;
+	top: 50%;
+	font-size: 0.8rem;
+	color: #fff;
+	transform: translate(-50%,-50%);
+}
+.cart-button span.add-to-cart {
+	opacity: 1;
+}
+.cart-button span.added {
+	opacity: 0;
+}
+
+.cart-button.clicked .fa-shopping-cart {
+	animation: cart 1.5s ease-in-out forwards;
+}
+.cart-button.clicked .fa-box {
+	animation: box 1.5s ease-in-out forwards;
+}
+.cart-button.clicked span.add-to-cart {
+	animation: txt1 1.5s ease-in-out forwards;
+}
+.cart-button.clicked span.added {
+	animation: txt2 1.5s ease-in-out forwards;
+}
+@keyframes cart {
+	0% {
+		left: -10%;
+	}
+	40%, 60% {
+		left: 50%;
+	}
+	100% {
+		left: 110%;
+	}
+}
+@keyframes box {
+	0%, 40% {
+		top: -20%;
+	}
+	60% {
+		top: 40%;
+		left: 52%;
+	}
+	100% {
+		top: 40%;
+		left: 112%;
+	}
+}
+@keyframes txt1 {
+	0% {
+		opacity: 1;
+	}
+	20%, 100% {
+		opacity: 0;
+	}
+}
+@keyframes txt2 {
+	0%, 80% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.cardddyyy{
+
+    margin-bottom: 10px;
+    margin-top: -10px;
+
+}
+.starsss {
+    padding-left: 10px;
+    margin-top: 5px;
+    color: #f2c752;
+}
+
+
+
+/* Search bar container */
+.search-barr {
+    display: flex;
+    align-items: center;
+}
+
+/* Search input field */
+.search-barr input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff; /* White background */
+    border: 2px solid #e0bb7a; /* Border color */
+    color: #333; /* Text color */
+    transition: border-color 0.3s ease;
+    width: 250px; /* Adjust width as needed */
+}
+
+.search-barr input[type="text"]:focus {
+    outline: none;
+    border-color: #ffc107; /* Border color on focus */
+}
+
+/* Search button */
+.search-barr button {
+    background-color: #e0bb7a; /* Button background color */
+    border: none;
+    padding: 10px 15px;
+    margin-left: -2px; /* Adjust position to align with input */
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-barr button:hover {
+    background-color: #ffc107; /* Darker shade on hover */
+    color: #343a40; /* Text color on hover */
+}
+
+/* FontAwesome icon inside the button */
+.search-barr button i {
+    font-size: 18px;
+}
+
+
+
+/* Media queries for responsiveness */
+@media (max-width: 1250px) {
+    /* .product-card {
+        width: 45%;
+    } */
+    .main h2 {
+        font-size: 1.5rem;
+    }
+    .img-row img {
+        width: 10rem;
+        height: 10rem;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .logo {
+        font-size: 1.5em;
+    }
+    .navigation a {
+        font-size: 1em;
+        padding-left: 10px;
+    }
+  
+  
+    .img-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .img-row img {
+        width: 8rem;
+        height: 8rem;
+    }
+    .main h2 {
+        font-size: 1.2rem;
+    }
+    .main .texty {
+        font-size: 0.8em;
+      
+    }
+}
+/*de tmm*/
+@media (max-width: 480px) {
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+    }
+    .navigation a {
+        padding: 5px 0;
+    }
+    .main h2 {
+        font-size: 1rem;
+    }
+    .main .texty {
+        font-size: 0.7em;
+        margin-top: 50%;
+    }
+    
+    .img-row img {
+        width: 6rem;
+        height: 6rem;
+    }
+}
+
+/*****/
+
+@media (max-width: 1200px) {
+    .carousel-cell {
+        width: 20%;
+    }
+}
+
+@media (max-width: 992px) {
+    .carousel-cell {
+        width: 25%;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-cell {
+        width: 27.33%;
+    }
+
+    .img-row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+  
+    .texttty h2 {
+        font-size: 1rem;
+    }
+}
+
+/* 
+
+@media (max-width: 1200px) {
+    .product-card {
+        width: 25rem;
+        height: 25rem;
+        margin: 20px;
+    }
+
+    .cart-button {
+        width: 15rem;
+        height: 2.8rem;
+    }
+
+    .heart {
+        left: 200px;
+        font-size: 18px;
+    }
+} */
+/* 
+@media (max-width: 992px) {
+    .product-card {
+        width: 14rem;
+        height: 22rem;
+        margin: 15px;
+    }
+
+    .cart-button {
+        width: 12rem;
+        height: 2.6rem;
+    }
+
+    .heart {
+        left: 160px;
+        font-size: 16px;
+    }
+} */
+/* 
+@media (max-width: 768px) {
+    .product-card {
+        width: 20rem;
+        height: 20rem;
+        margin: 10px;
+    }
+
+    .cart-button {
+        width: 10rem;
+        height: 2.4rem;
+    }
+
+    .heart {
+        left: 130px;
+        font-size: 14px;
+    }
+}
+ */
+
+/* 
+@media (max-width: 576px) {
+    .product-card {
+        width: 18rem;
+        height: 24.5rem;
+        margin: 50px;
+    }
+
+    .cart-button {
+        width: 12.5rem;
+        height: 2.9rem;
+    }
+
+    .heart {
+        left: 203px;
+        font-size: 17px;
+    }
+} */
+

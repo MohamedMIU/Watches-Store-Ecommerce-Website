@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/header1.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <title>Golden Triumph</title>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <section class="main">
+            <img class="background" src="/images/background.jpg" alt="background">
+            <h1>Discover Our <br> <span> New Collection </span> Of <br> Luxury Watches</h1>
+            <h2>50% Off</h2>
+            <div class="rectangle"></div>
+    </section>
+    <section class="second-section">
+        <h2>What We Have</h2>
+        <div class="content">
+            <div class="card">
+                <img src="/images/card 1.jpg" alt="Card 1">
+                <h3>Classic Watches</h3>
+            </div>
+            <div class="card">
+                <img src="/images/card 2.jpg" alt="Card 2">
+                <h3>Gorgeous Accessories</h3>
+            </div>
+            <div class="card">
+                <img src="/images/card 3.jpg" alt="Card 3">
+                <h3>Luxury Bracelets</h3>
+            </div>
+        </div>
+    </section>
+    <section class="third-section">
+        <h2 class="opening">New Arrival</h2>
+        <div class="products">
+            <% if (Products.length > 0) {
+                Products.sort((a, b) => b.createdAt - a.createdAt);
+                const recentProducts = Products.slice(0, 4); %>
+                <% recentProducts.forEach((Product, index) => { %>
+                        <div class="product">
+                            <div class="product-image">
+                                <img class="watch" src="/images/watch 1.png" alt="product" data-product-id="<%= Product.id %>">
+                                <div class="heart-icon">
+                                    <input type="checkbox" class="heart-checkbox" id="heart-checkbox-<%= Product.id %>" data-product-id="<%= Product.id %>">
+                                    <label for="heart-checkbox-<%= Product.id %>" class="heart"><i class="fa-solid fa-heart"></i></label>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-name">
+                                    <%= Product.name %>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-lastprice">
+                                        <%= Product.price %>$
+                                    </div>
+                                    <div class="product-discount-price">
+                                        <% if (Product.oldPrice) {%>
+                                            <%= Product.oldPrice %>$
+                                        <% } %>
+                                    </div>
+                                    <div class="product-discount">
+                                        <% if (Product.discount) {%>
+                                            (<%= Product.discount %>%)
+                                        <% } %>
+                                    </div>
+                                </div>
+                                <div class="cardddyyy">
+                                    <form action="/add-to-cart" method="POST">
+                                    <input type="hidden" name="productId" value="<%= Product.id %>">
+                                    <input type="hidden" name="productName" value="<%= Product.name %>">
+                                    <input type="hidden" name="productPrice" value="<%= Product.price %>">
+                                    <button class="cart-button">
+                                    <span class="add-to-cart">Add to cart</span>
+                                    <span class="added">Added</span>
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <i class="fas fa-box"></i>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                <% }) %>
+            <% } %>
+        </div>
+        <h2 class="ending">Be Elegant With Our Products</h2>
+    </section>
+    <%- include('./partials/footer.ejs') %>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.cart-button');
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const form = this.parentElement.querySelector('form');
+                    form.submit();
+                });
+            });
+        });
+    </script>
+    <script src="/js/header1.js"></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/cart.js"></script>
+</body>
+</html>

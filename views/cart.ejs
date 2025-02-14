@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="/css/header2.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <title>Cart</title>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+
+        <h1 style="visibility: hidden;">Cart</h1>
+    <section class="products">
+        <% if (cart.items.length === 0) { %>
+            <p class="empty-cart-message">The Cart Is Empty</p>
+        <% } else { %>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Remove</td>
+                        <td>Name</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Subtotal</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% cart.items.forEach(item => { %>
+                        <tr style="margin-bottom: 2vw;">
+                            <td><a href="#" class="remove-item" data-product-id="<%= item.productId %>"><i class="fa-regular fa-circle-xmark decrease-quantity"></i></a></td>
+                            <td><%= item.productName %></td>
+                            <td><%= item.productPrice %>$</td>
+                            <td><%= item.quantity %></td>
+                            <td><%= item.productPrice * item.quantity %>$</td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } %>
+    </section>
+    <section class="payment">
+        <% if (cart.items.length > 0) { %>
+            <div class="coupon">
+                <h3>Apply Coupon</h3>
+                <div>
+                    <input type="text" placeholder="Enter Your Coupon">
+                    <button class="apply">Apply</button>
+                </div>
+            </div>
+            <div class="total">
+                <h3>Total</h3>
+                <table>
+                    <tr>
+                        <td>Cart Total</td>
+                        <td><%= cart.totalPrice %>$</td>
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong><%= cart.totalPrice %>$</strong></td>
+                    </tr>
+                </table>
+                <form method="Post" action="/checkout">
+                    <button class="checkout">Checkout</button>
+                </form>
+            </div>
+        <% } %>
+    </section>
+    <%- include('./partials/footer.ejs') %>
+
+    <script src="/js/header2.js"></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/cart.js"></script>
+</body>
+</html>

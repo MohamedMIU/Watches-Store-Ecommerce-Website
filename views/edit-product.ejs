@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link rel="stylesheet" href="/css/edit-product.css">
+</head>
+<body>
+    
+     <div class="container">
+        <header>Edit Product</header>
+        <form action="/update-product/<%= product._id %>" method="post">
+            <label for="name">Name:</label>
+            <input name="name" type="text" value="<%= product.name %>" required><br>
+
+            <label for="price">Price:</label>
+            <input name="price" type="number" value="<%= product.price %>" required><br>
+
+            <label for="discount">Discount:</label>
+            <input name="discount" type="number" value="<%= product.discount %>"><br>
+
+            <label for="oldPrice">Old Price:</label>
+            <input name="oldPrice" type="number" value="<%= product.oldPrice %>"><br>
+
+            <label for="imageUrl">Image URL:</label>
+            <input name="imageUrl" type="text" value="<%= product.imageUrl %>"><br>
+            
+            <label for="category">Category:</label>
+            <input name="category" type="text" value="<%= product.category %>" required><br>
+
+            <button type="submit">Update Product</button>
+        </form>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const inputs = document.querySelectorAll("input[required]");
+
+    // Restrict input to letters only for name and category fields
+    const stringInputs = document.querySelectorAll('input[name="name"], input[name="category"]');
+    stringInputs.forEach(input => {
+        input.addEventListener("input", () => {
+            input.value = input.value.replace(/[^a-zA-Z\s]/g, '');
+            validateInput(input);
+        });
+    });
+
+    // Restrict input to numbers only for price, discount, and oldPrice fields
+    const numberInputs = document.querySelectorAll('input[name="price"], input[name="discount"], input[name="oldPrice"]');
+    numberInputs.forEach(input => {
+        input.addEventListener("input", () => {
+            input.value = input.value.replace(/[^0-9.]/g, '');
+            validateInput(input);
+        });
+    });
+
+    // Validate inputs for required fields and update styles
+    inputs.forEach(input => {
+        input.addEventListener("input", () => {
+            validateInput(input);
+        });
+    });
+
+    function validateInput(input) {
+        if (input.checkValidity()) {
+            input.style.borderColor = "#FFD966";
+        } else {
+            input.style.borderColor = "#ff0000";
+        }
+    }
+});
+    </script>
+</body>
+</html>

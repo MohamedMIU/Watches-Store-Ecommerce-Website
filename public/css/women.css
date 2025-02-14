@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    
+}
+section{ 
+    padding: 0px 50px;
+}
+
+.page{
+    font-family: "Poppins", sans-serif;
+    padding: 6vw 0vw 0vw 0vw;
+
+}
+header{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+ 
+ }
+
+.logo{
+    color: rgb(237, 201, 103); 
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 1.8em;
+    text-transform: uppercase;
+}
+.navigation a{
+    color: rgb(237, 201, 103); 
+    font-size: 1.1em;
+    font-weight: 700;
+    text-decoration: none;
+    padding-left: 20px;
+}
+.navigation a:hover{
+    color:brown;
+}
+.shady{
+    padding: 0px 0px;
+
+}
+.products{
+    background-color:#1e1e1e;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items:center;
+    background-image: url("..//IMAGES/young-couple-choosing-necklace-jewelry-store.jpg"); 
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+.main h2 {
+    position:absolute;
+    color: #1e1e1e;
+    font-size: 1.5rem;
+    font-weight: 600px;
+    padding-left: 0px;
+    margin-top: 22%;
+    min-width: 600;
+    text-transform: uppercase;
+}
+
+/* .sima{
+ 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+
+} */
+
+.texty{
+    font-size: 1.25em;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: #e0bb7a;
+    position: relative;
+}
+
+
+.img-rolex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 40px;
+    
+}
+
+
+.img-row img {
+    width: 13.5rem;
+    height: 13.5rem;
+    border-radius: 50%;
+    margin: 20px;
+    margin-top: 35px;
+    justify-content: space-between;
+}
+.product-card {
+    display:relative;
+    flex-direction: column;
+    margin: 50px;
+    width: 18rem;
+    height: 27rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+    justify-content: space-evenly;
+    margin: 25px 0px;
+}
+
+.product-card:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
+}
+
+.product-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease-in-out;
+}
+
+
+
+.product-info {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+.product-discount-price{
+   padding-left: 8px;
+    display: inline;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(128,128,128); 
+    text-decoration: line-through;}
+
+.product-lastprice {
+    display: inline;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f2c752;; 
+}
+
+.product-discount {
+    display: inline;
+    padding-left: 10px;
+    font-size: 0.9em;
+    color: #f2c752; 
+}
+.product-name {
+    font-size: 1.2em;
+    /* margin-bottom: 8px; */
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+
+.swsw {
+    display: flex;
+    padding: 0;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-left: 50px;
+    margin-bottom: -100px;
+    margin-right: 10px;
+    text-decoration: none;
+    text-decoration-style: none;
+}
+
+.swsw a {
+    text-decoration: none;
+}
+.texttty{
+    display: flex;
+    justify-content: center;
+    color: #edc967;
+}
+
+.img-row{
+    display: flex;
+}
+
+.carousel {
+    /* background-image: url("..//IMAGES/young-couple-choosing-necklace-jewelry-store.jpg");
+    background-repeat: no-repeat; */
+     background-color:#1e1e1e;
+    background-size: cover;
+	margin-top: 8%;
+    padding: 0px 0px;
+}
+.carousel-cell {
+    width: 15%;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+  }
+
+.carousel-cell:before {
+	display: block;
+	content: '';
+}
+.flickity-prev-next-button {
+    display: none;
+  }
+  
+.flickity-page-dots {
+    display: none;
+  }
+
+  .ads img {
+    width: 36.5rem;
+    height: 26.1rem;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    
+}
+
+
+.trending-now{
+    padding: 50px;
+     background-color:#1e1e1e;
+    justify-content: center;
+}
+.trending-now h1
+{
+    color: #f2c752;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 25px;
+
+}
+.trending-now .products
+{
+    padding: 0px 0px;
+}
+
+
+
+#pp1:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/pretty-woman-with-golden-nails-beautiful-gold-jewelry-isolated-white.jpg");
+
+}
+#pp2:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/pretty-woman-with-golden-nails.jpg");
+
+}
+#pp3:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/cool-woman-posing-with-sunglasses-side-view.jpg");
+
+}
+#pp4:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/beautiful-young-girl-with-pearl-jewelry.jpg");
+
+}
+#pp5:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("");
+
+}
+#pp20:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("");
+
+}
+#pp6:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/young-model-demonstrating-golden-necklace.jpg");
+
+}
+#pp7:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/-woman-wearing-jewelry--.jpg");
+
+}
+#pp8:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/young-model-demonstrating-expensive-ring.jpg");
+
+}
+#pp9:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/hand-wearing-gold-bracelet-front-view.jpg");
+
+}
+#pp10:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/young-chain.jpg");
+
+}
+#pp11:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/close-fashion-portrait-young-woman-black-bodysuit-with-gold-cuts-chain-ring-posing.jpg");
+
+}
+#pp12:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/lovely-woman.jpg");
+
+}
+
+#pp13:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/young-model-demonstrating-golden-necklace.jpg");
+
+}
+#pp14:hover .product-image img{
+
+    transform: scale(1.05);
+    content: url("..//IMAGES/cool-woman-posing-with-sunglasses-side-view.jpg");
+
+}
+
+.heart-icon {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.heart-checkbox {
+  display: none;
+}
+
+.heart {
+  position: absolute;
+  top: 0;
+  left: 250px;
+  font-size: 20px;
+  color: black; 
+}
+
+.heart-checkbox:checked + .heart {
+  color: red; 
+}
+
+.starsss{
+    padding-left: 10px;
+    margin-top: 2px;
+    color: #f2c752;
+}
+div[id="pp5"] .product-info {
+    padding: 28px;
+}
+
+
+div[id="pp20"] .product-info {
+    padding: 28px;
+}
+
+.cart-button {
+    margin-top: 16px;
+    margin-left: 8px;
+	position: relative;
+	width: 15rem;
+	height: 3rem;
+	border: 0;
+    font-size: 0.9rem;
+	border-radius: 8px;
+	background-color: #f2c752;
+	outline: none;
+	cursor: pointer;
+	color: #fff;
+	transition: .3s ease-in-out;
+	overflow: hidden;
+}
+.cart-button:hover {
+    background-color: #1e1e1e;
+}
+.cart-button:active {
+	transform: scale(.9);
+}
+
+.cart-button .fa-shopping-cart {
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	left: -10%;
+	font-size: 1.5em;
+	transform: translate(-50%,-50%);
+}
+.cart-button .fa-box {
+	position: absolute;
+	z-index: 3;
+	top: -20%;
+	left: 52%;
+	font-size: 0.75rem;
+	transform: translate(-50%,-50%);
+}
+.cart-button span {
+	position: absolute;
+	z-index: 3;
+	left: 50%;
+	top: 50%;
+	font-size: 0.8rem;
+	color: #fff;
+	transform: translate(-50%,-50%);
+}
+.cart-button span.add-to-cart {
+	opacity: 1;
+}
+.cart-button span.added {
+	opacity: 0;
+}
+
+.cart-button.clicked .fa-shopping-cart {
+	animation: cart 1.5s ease-in-out forwards;
+}
+.cart-button.clicked .fa-box {
+	animation: box 1.5s ease-in-out forwards;
+}
+.cart-button.clicked span.add-to-cart {
+	animation: txt1 1.5s ease-in-out forwards;
+}
+.cart-button.clicked span.added {
+	animation: txt2 1.5s ease-in-out forwards;
+}
+@keyframes cart {
+	0% {
+		left: -10%;
+	}
+	40%, 60% {
+		left: 50%;
+	}
+	100% {
+		left: 110%;
+	}
+}
+@keyframes box {
+	0%, 40% {
+		top: -20%;
+	}
+	60% {
+		top: 40%;
+		left: 52%;
+	}
+	100% {
+		top: 40%;
+		left: 112%;
+	}
+}
+@keyframes txt1 {
+	0% {
+		opacity: 1;
+	}
+	20%, 100% {
+		opacity: 0;
+	}
+}
+@keyframes txt2 {
+	0%, 80% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.cardddyyy{
+
+    margin-bottom: 10px;
+    margin-top: -10px;
+
+}
+
+/* Search bar container */
+.search-barr {
+    display: flex;
+    align-items: center;
+}
+
+/* Search input field */
+.search-barr input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff; /* White background */
+    border: 2px solid #e0bb7a; /* Border color */
+    color: #333; /* Text color */
+    transition: border-color 0.3s ease;
+    width: 250px; /* Adjust width as needed */
+}
+
+.search-barr input[type="text"]:focus {
+    outline: none;
+    border-color: #ffc107; /* Border color on focus */
+}
+
+/* Search button */
+.search-barr button {
+    background-color: #e0bb7a; /* Button background color */
+    border: none;
+    padding: 10px 15px;
+    margin-left: -2px; /* Adjust position to align with input */
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-barr button:hover {
+    background-color: #ffc107; /* Darker shade on hover */
+    color: #343a40; /* Text color on hover */
+}
+
+/* FontAwesome icon inside the button */
+.search-barr button i {
+    font-size: 18px;
+}
+.shadyyy {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+/* Style the select dropdown */
+.shadyyy select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: rgb(237, 201, 103);
+    font-size: 14px;
+}
+
+/* Style the hidden input */
+.shadyyy input[type="hidden"] {
+    display: none;
+}
+
+
+.filter{
+    display: flex;
+    justify-content: space-between;
+   color: #f2c752;
+   font-size: larger;
+   background-color:#1e1e1e;
+}

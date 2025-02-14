@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/users-edit-add.css">
+    <title>Edit User</title>
+</head>
+<body>
+    <header>
+        <h1>Edit User</h1>
+    </header>
+    <div class="edit-user-form">
+        <form action="/admin/users/edit/<%= user._id %>" method="post">
+            
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="<%= user.username %>" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="<%= user.email %>" required>
+            
+            <label for="phoneno">Phone Number:</label>
+            <input type="text" id="phoneno" name="phoneno" value="<%= user.phoneno %>" required>
+            
+            <label for="street">Street:</label>
+            <input type="text" id="street" name="street" value="<%= user.street %>" required>
+            
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" value="<%= user.city %>" required>
+            
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" value="<%= user.state %>" required>
+            
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" name="zip" value="<%= user.zip %>" required>
+            
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" value="<%= user.country %>" required>
+
+            <label for="isAdmin">Is Admin:</label>
+            <input type="text" id="isAdmin" name="isAdmin" value="<%= user.isAdmin %>" required>
+            
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>
